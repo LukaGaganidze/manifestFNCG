@@ -1,5 +1,6 @@
 import React from "react";
 import classes from "./Footer.module.css";
+import { Link } from "react-router-dom";
 
 import ContainerBig from "../../UI/container-big/ContainerBig";
 
@@ -13,10 +14,15 @@ const Footer = () => {
               <div>
                 <h4>About</h4>
                 <ul>
-                  <li>Pieces</li>
-                  <li>Designs</li>
-                  <li>About</li>
-                  <li>Contact</li>
+                  <Link className={classes["footer-link"]} to="/">
+                    Pieces
+                  </Link>
+                  <Link className={classes["footer-link"]} to="/about">
+                    About
+                  </Link>
+                  <Link className={classes["footer-link"]} to="/more">
+                    Contact
+                  </Link>
                 </ul>
               </div>
 
@@ -24,15 +30,21 @@ const Footer = () => {
                 <h4>Contact</h4>
                 <ul>
                   <a
+                    className={classes["footer-link"]}
                     target="_blank"
                     href="https://www.linkedin.com/in/lukagaganidze/"
                   >
                     Linkedin
                   </a>
-                  <a target="_blank" href="https://twitter.com/LukaGaganidze">
+                  <a
+                    className={classes["footer-link"]}
+                    target="_blank"
+                    href="https://twitter.com/LukaGaganidze"
+                  >
                     Twitter
                   </a>
                   <a
+                    className={classes["footer-link"]}
                     target="_blank"
                     href="https://www.instagram.com/luka_gaganidze/"
                   >
@@ -49,14 +61,9 @@ const Footer = () => {
           </div>
 
           <div className={classes["footer-second-part"]}>
-            <div className={classes["valute-controller"]}>USD</div>
             <div className={classes["footer-second-text"]}>
               <div className={classes["footer-second-iiner-text"]}>
-                <div>terms {"&"} conditions</div>
-                <div>Privacy Policy</div>
-                <div>
-                  Developed By <a href="#">Luka Gaganidze</a>
-                </div>
+                <div>Developed By Luka Gaganidze</div>
               </div>
               <div className={classes["footer-last-text"]}>
                 manifest FNCG 2023

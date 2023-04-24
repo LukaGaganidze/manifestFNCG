@@ -7,6 +7,7 @@ import css from "../../../assets/footer-images/css.png";
 import firebase from "../../../assets/footer-images/firebase.png";
 import redux from "../../../assets/footer-images/redux.png";
 import react from "../../../assets/footer-images/react.png";
+import github from "../../../assets/logo-n-svgs/social-logos/github.png";
 
 const About = () => {
   return (
@@ -35,6 +36,16 @@ const About = () => {
             <img className={classes["skills-side-img"]} src={firebase} />
             <p>Firebase</p>
           </div>
+        </div>
+
+        <div className={classes["project-on-github"]}>
+          <h2>Project on GitHub</h2>
+          <a
+            href="https://github.com/LukaGaganidze/manifestFNCG"
+            target="_Blanck"
+          >
+            <img src={github} />
+          </a>
         </div>
       </div>
 

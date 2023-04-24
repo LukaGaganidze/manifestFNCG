@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4124558f.css",
+    "main.js": "/static/js/main.44a27d62.js",
+    "static/media/foil-wire-main.jpg": "/static/media/foil-wire-main.9d9b0504f35d151281cf.jpg",
+    "static/media/epee-wire-main.jpg": "/static/media/epee-wire-main.3a30ded6ff762e3ba72a.jpg",
+    "static/media/sabre-jacket-main.jpg": "/static/media/sabre-jacket-main.ee9525eff3d8ec4f295d.jpg",
+    "static/media/faoil-man-main.jpg": "/static/media/faoil-man-main.e9cd402b6b9dd11a054e.jpg",
+    "static/media/resume.png": "/static/media/resume.27f0ff9f80c18d15d13a.png",
+    "static/media/mask1-main.jpg": "/static/media/mask1-main.5433684bdf87471ae6a7.jpg",
+    "static/media/mask3-main.jpg": "/static/media/mask3-main.3335d0801cf12723327c.jpg",
+    "static/media/glove-main.jpg": "/static/media/glove-main.ff34c5086e17af33b874.jpg",
+    "static/media/mask4-main.jpg": "/static/media/mask4-main.86bb4d5c7088d99a584d.jpg",
+    "static/media/react.png": "/static/media/react.7458ea4d3c8e8f0dd18f.png",
+    "static/media/mask2-main.jpg": "/static/media/mask2-main.53f8b79dc6b342a1365f.jpg",
+    "static/media/form-woman-main.jpg": "/static/media/form-woman-main.d8efa833c369fc879ace.jpg",
+    "static/media/form-man-main.jpg": "/static/media/form-man-main.5e05437c3d22fa52f763.jpg",
+    "static/media/redux.png": "/static/media/redux.1e63ae7c2bab13790613.png",
+    "static/media/firebase.png": "/static/media/firebase.80bebfca3c186fcb5059.png",
+    "static/media/css.png": "/static/media/css.d2ba4e89ddfec3c1f071.png",
+    "static/media/epeemain.jpg": "/static/media/epeemain.a874928f253ee6c1a7bc.jpg",
+    "static/media/foilmain.jpg": "/static/media/foilmain.a61bb5bbfcd1e93b9ae0.jpg",
+    "static/media/HTML.png": "/static/media/HTML.54d9ca8e8176d36e9e22.png",
+    "static/media/FNCG-LOGO.png": "/static/media/FNCG-LOGO.d3f21e02b29095ab2fed.png",
+    "index.html": "/index.html",
+    "main.4124558f.css.map": "/static/css/main.4124558f.css.map",
+    "main.44a27d62.js.map": "/static/js/main.44a27d62.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4124558f.css",
+    "static/js/main.44a27d62.js"
+  ]
+}
