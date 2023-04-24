@@ -1,0 +1,17 @@
+header {
+  font-size: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: solid rgba(0, 0, 0, 0.313) 1px;
+  padding: 0 2rem;
+  position: relative;
+}
+
+.header-item {
+  width: 30rem;
+  display: flex;
+
+  justify-content: center;
+}
