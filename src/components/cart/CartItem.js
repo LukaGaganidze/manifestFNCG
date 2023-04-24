@@ -4,6 +4,7 @@ import classes from "./CartItem.module.css";
 
 import { useDispatch } from "react-redux";
 import { cartFunctionalityActions } from "../../store/CartFunctionality-slice";
+import CartQuantity from "../functionalComponenets/cartQuantity";
 
 const CartItem = (props) => {
   const dispatch = useDispatch();
@@ -25,11 +26,11 @@ const CartItem = (props) => {
           <div className={classes["item-img-side-action"]}>
             <h4>{props.name} </h4>
             <p>{props.description}</p>
-            <div className={classes["cart-item-quantity"]}>
-              <span onClick={remQuantityHandler}>-</span>
-              <span>{props.quantity}</span>
-              <span onClick={addQuantityHandler}>+</span>
-            </div>
+            <CartQuantity
+              onRemoveItem={remQuantityHandler}
+              onAddItem={addQuantityHandler}
+              quantity={props.quantity}
+            />
           </div>
         </div>
 
