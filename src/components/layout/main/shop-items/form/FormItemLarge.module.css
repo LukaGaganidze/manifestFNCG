@@ -8,6 +8,7 @@
 .form-img-large {
   width: 100%;
   transition: all 1s;
+  cursor: pointer;
 }
 
 .form-info-large {
@@ -15,6 +16,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.form-info-large div:first-child {
+  width: 28rem;
 }
 
 .form-info-large h2 {

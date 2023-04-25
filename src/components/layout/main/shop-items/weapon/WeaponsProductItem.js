@@ -1,33 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
 import classes from "./WeaponsProductItem.module.css";
 
+import ShopItemsAdditionalInfo from "../../../../UI/ShopItemsAdditionalInfo/ShopItemsAdditionalInfo";
 import ShoppingItemCard from "../../../../UI/ShoppingItemCard/ShoppingItemCard";
 import ButtonAddLARGE from "../../../../UI/buttons/Button-Large-Add/ButtonAddLARGE";
 import ButtonAddedLARGE from "../../../../UI/buttons/Button-ADDED-Large/ButtonAddedLARGE";
-import CartQuantity from "../../../../functionalComponenets/cartQuantity";
+import ShopItemsAdditionalBackground from "../../../../UI/ShopItemsAdditionalInfo/ShopItemsAdditionalBackgfround";
+// import CartQuantity from "../../../../functionalComponenets/cartQuantity";
 
 import { useDispatch, useSelector } from "react-redux";
 import { cartFunctionalityActions } from "../../../../../store/CartFunctionality-slice";
 
 const WeaponsProductItem = (props) => {
-  // console.log(props.secondaryImgs[0]);
-
   const dispatch = useDispatch();
 
-  const addQuantityHandler = () => {
-    dispatch(cartFunctionalityActions.addQuantity(props.id));
-  };
-  const remQuantityHandler = () => {
-    dispatch(cartFunctionalityActions.remQuantity(props.id));
-  };
   const cartItems = useSelector(
     (state) => state.CartFunctionalitySlice.cartItems
   );
-  const currItemIncart = cartItems.find((item) => item.id === props.id);
 
-  const [additionalInfo, setAdditionalinfo] = useState(false);
   const itemIsInAdded = cartItems.some((el) => el.id === props.id);
   const addWeaponProductToCart = () => {
     dispatch(
@@ -45,72 +37,57 @@ const WeaponsProductItem = (props) => {
     dispatch(cartFunctionalityActions.removeItemFromCart(props.id));
   };
 
+  // for additional information
+  const currItemIncart = cartItems.find((item) => item.id === props.id);
+
+  const [additionalInfo, setAdditionalinfo] = useState(false);
+  const [activeAdditionalInfo, setActiveAditionalInfo] = useState(false);
+
+  useEffect(() => {
+    const delayedInfo = setTimeout(() => {
+      setActiveAditionalInfo(additionalInfo);
+    }, 1000);
+    return () => clearTimeout(delayedInfo);
+  }, [additionalInfo]);
+
   const openAdditionalInformationhandler = () => {
     setAdditionalinfo(true);
   };
   const closeAdditionalInformationhandler = () => {
     setAdditionalinfo(false);
   };
-
-  const additionalweaponInfoBackground = (
-    <div
-      onClick={closeAdditionalInformationhandler}
-      className={classes["weapon-additional-info-overlay"]}
-    ></div>
-  );
-
-  const additionalweaponInfo = (
-    <div className={classes["additional-info-content-container"]}>
-      <div className={classes["images-div"]}>
-        {props.secondaryImgs.map((img) => (
-          <img key={img} className={classes["additional-pic"]} src={img} />
-        ))}
-      </div>
-      <div>
-        <div className={classes["information-div"]}>
-          <h1>{props.name}</h1>
-          <p>{props.description}</p>
-          <p>{props.price}</p>
-          <p>{props.additionalInfo}</p>
-        </div>
-
-        <div className={classes["popup-actions"]}>
-          {currItemIncart ? (
-            <p className={classes["popup-actions-header"]}>
-              Item is added to the cart
-            </p>
-          ) : (
-            <p className={classes["popup-actions-header"]}>Add To Cart</p>
-          )}
-          {currItemIncart ? (
-            <CartQuantity
-              className={classes["popup-controller-price"]}
-              onAddItem={addQuantityHandler}
-              onRemoveItem={remQuantityHandler}
-              quantity={currItemIncart ? currItemIncart.quantity : 0}
-            />
-          ) : (
-            <ButtonAddLARGE
-              onAddItem={addWeaponProductToCart}
-              className={`${classes["weapon-button"]} ${classes["weapon-button-poppup"]}`}
-            />
-          )}
-        </div>
-      </div>
-    </div>
-  );
-
+  const addQuantityHandler = () => {
+    dispatch(cartFunctionalityActions.addQuantity(props.id));
+  };
+  const remQuantityHandler = () => {
+    dispatch(cartFunctionalityActions.remQuantity(props.id));
+  };
   return (
     <ShoppingItemCard className={classes["individual-weapon-product"]}>
+      {/* additional information blur */}
       {additionalInfo &&
         createPortal(
-          additionalweaponInfoBackground,
+          <ShopItemsAdditionalBackground
+            onCLoseCart={closeAdditionalInformationhandler}
+          />,
           document.getElementById("additionalInfoBackground")
         )}
 
+      {/* additional informaton itself */}
       {additionalInfo &&
         createPortal(
-          additionalweaponInfo,
+          <ShopItemsAdditionalInfo
+            curItem={currItemIncart}
+            addQuantity={addQuantityHandler}
+            remQuantity={remQuantityHandler}
+            onAddProductToCart={addWeaponProductToCart}
+            secondaryImgs={props.secondaryImgs}
+            name={props.name}
+            description={props.description}
+            price={props.price}
+            additionalInfo={props.additionalInfo}
+            activeAdditionalInfo={activeAdditionalInfo}
+          />,
           document.getElementById("additionalInfo")
         )}
       <img

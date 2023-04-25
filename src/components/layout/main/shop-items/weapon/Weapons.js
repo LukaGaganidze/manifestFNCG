@@ -17,26 +17,26 @@ import epee4 from "../../../../../assets/main-content-pics/weapons/epee/epee4.jp
 
 const WeaponsDummyData = [
   {
-    name: "COMPLETE FOIL",
-    description: "PROJECT ZER0 FOIL",
+    name: "FOIL",
+    description: "COMPLETE FENCING WEAPON",
     img: foilImage,
     secondary: [foil1, foil2, foil3, foil4],
     price: 210,
     quantity: 1,
     id: "foil-1",
     additionalInfo:
-      "Now featuring the Apex FIE Blade. The Zer0 Foil is the world's ultimate lightweight weapon. Each Zer0 component has been meticulously developed and crafted with one goal in mind: Performance.",
+      "This is complete foil, with all attributes included. This product contains every attribute electric foil needs to function.",
   },
   {
-    name: "COMPLETE EPEE",
-    description: "PROJECT ZER0 EPEE",
+    name: "EPEE",
+    description: "COMPLETE FENCING WEAPON",
     img: epeeImage,
-    secondary: [epee1, epee2, epee3, epee4],
     price: 210,
     quantity: 1,
     id: "eppe-1",
+    secondary: [epee1, epee2, epee3, epee4],
     additionalInfo:
-      "Now featuring the Apex FIE Blade. The Zer0 Foil is the world's ultimate lightweight weapon. Each Zer0 component has been meticulously developed and crafted with one goal in mind: Performance.",
+      "This is complete epee, with all attributes included. This product contains every attribute electric epee needs to function",
   },
 ];
 

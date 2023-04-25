@@ -35,3 +35,7 @@
 .wire-text span {
   font-size: 1.8rem;
 }
+
+.wire-img {
+  cursor: pointer;
+}

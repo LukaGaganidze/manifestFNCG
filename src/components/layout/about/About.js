@@ -8,7 +8,6 @@ import firebase from "../../../assets/footer-images/firebase.png";
 import redux from "../../../assets/footer-images/redux.png";
 import react from "../../../assets/footer-images/react.png";
 import github from "../../../assets/logo-n-svgs/social-logos/github.png";
-import leonPaul from "../../../assets/logo-n-svgs/leopPaul/leon.png";
 
 const About = () => {
   return (
@@ -46,16 +45,6 @@ const About = () => {
             target="_Blanck"
           >
             <img src={github} />
-          </a>
-        </div>
-
-        <div className={`${classes["leon-paulcontainer"]}`}>
-          <h2>
-            All picture and information is taken from Leon Paul website, to
-            simulate online shop
-          </h2>
-          <a href="https://www.leonpaul.com/" target="_Blanck">
-            <img src={leonPaul} className={classes["leon-paul-logo"]} />
           </a>
         </div>
       </div>

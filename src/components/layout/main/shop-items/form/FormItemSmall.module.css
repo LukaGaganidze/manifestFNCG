@@ -73,3 +73,7 @@
   color: black;
   border-bottom: solid black 1px;
 }
+
+.form-img-S {
+  cursor: pointer;
+}
